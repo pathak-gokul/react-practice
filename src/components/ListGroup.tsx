@@ -1,9 +1,12 @@
 // import { MouseEvent } from "react";
 
 import { useState } from "react";
+interface Props {
+  items: string[];
+  heading: string;
+}
 
-function ListGroup() {
-  const Items = ["Nepal", "India", "America", "Switerland", "Germany"];
+function ListGroup({ items, heading }: Props) {
   // Items = [];
 
   // const getMessage = () => {
@@ -28,13 +31,14 @@ function ListGroup() {
   // arr[0]; //variable(selectedIndex)
   // arr[1]; //updater fucntion
   // const [name, setName] = useState("");
+
   return (
     <>
-      <h1>List Group</h1>
+      <h1>{heading}</h1>
       {/* {Items.length === 0 ? <p>No items found.</p> : Null} */}
-      {Items.length === 0 && <p>No items found.</p>}
+      {items.length === 0 && <p>No items found.</p>}
       <ul className="list-group">
-        {Items.map((item, index) => (
+        {items.map((item, index) => (
           <li
             className={
               selectedIndex === index
