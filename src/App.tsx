@@ -1,4 +1,5 @@
 // import Message from "./Message"
+import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 function App() {
   let items = ["Nepal", "India", "America", "Switerland", "Germany"];
@@ -10,6 +11,11 @@ function App() {
   };
   return (
     <div>
+      <div className="alert alert-primary">
+        <Alert>
+          Cities fetched successfully!! <span>gp</span>
+        </Alert>
+      </div>
       <ListGroup
         items={items}
         heading={"Cities"}
