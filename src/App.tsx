@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import Message from "./Message";
 interface Person {
   name: string;
@@ -28,6 +29,7 @@ const people: Person[] = [
 const App = () => {
   return (
     <div>
+      <Navbar />
       hello <Message></Message>
       <ul className="list-none p-0">
         {people.map((person, index) => (
