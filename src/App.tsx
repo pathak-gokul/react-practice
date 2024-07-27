@@ -1,3 +1,4 @@
+import Contact_me_form from "./components/Contact_me_form";
 import Navbar from "./components/Navbar";
 import Navbar_1 from "./components/Navbar_1";
 import Message from "./Message";
@@ -34,6 +35,7 @@ const App = () => {
       <span className="my-28">
         hello <Message></Message>
       </span>
+      <Contact_me_form className="mt-60" />
       {/* <ul className="list-none p-0">
         {people.map((person, index) => (
           <li key={index} className="bg-gray-100 border-b border-gray-200 p-2">
