@@ -1,15 +1,20 @@
 {
-  "devDependencies": {
-    "prettier": "3.3.3"
-  },
   "name": "by_frontend_mastery",
   "version": "1.0.0",
   "description": "basic",
   "main": "index.js",
   "scripts": {
-    "format":  "prettier --write \"src/**/*.{js, jsx, ts, tsx}\"",
+    "format": "prettier --write \"src/**/*.{js, jsx, ts, tsx}\"",
+    "lint": "eslint \"src/**/*.{js, jsx, ts, tsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0"
+  },
+  "dependencies": {
+    "prettier": "^3.3.3"
+  }
 }
