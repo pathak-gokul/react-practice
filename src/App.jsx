@@ -5,10 +5,8 @@ import SearchParams from "./SearchParams";
 
 const App = () => {
   return (
-    <div>
+    <div className="max-w-5xl mx-auto p-16">
       <h1>Adpot Me!</h1>
-      <Pet sound="bau bau" gg="is" type="dog" />
-      <Pet sound="bau bau" gg="is" type="dog" />
       <SearchParams />
     </div>
   );
