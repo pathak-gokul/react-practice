@@ -8,6 +8,9 @@ body {
   background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1020px;
+  margin-inline: auto;
+  padding: 6rem 9rem;
 }
 
 .search-params {
@@ -24,7 +27,7 @@ body {
   width: 360px;
   margin: 0px 25px 0px 0px;
   padding: 35px 15px 15px 15px;
-  float: left;
+  /* float: left; */
 }
 
 .search {
