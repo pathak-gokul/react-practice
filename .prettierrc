@@ -1,4 +1,4 @@
 {
-    "singleQuote": false,
-    "editor.formatOnSave": true
+  "singleQuote": false,
+  "editor.formatOnSave": true
 }
