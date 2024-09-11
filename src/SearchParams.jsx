@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import Pet from "./Pet";
+// import Pet from "./Pet";
 import useBreedList from "./useBreedList";
+import Results from "./Results";
 const Animals = ["elephant", "cat", "dog", "rat", "rabbit", "bird", "reptile"];
 
 const SearchParams = () => {
@@ -81,7 +82,7 @@ const SearchParams = () => {
           Submit
         </button>
       </form>
-      <div className="grid grid-cols-3 gap-6 mt-16">
+      {/* <div className="grid grid-cols-3 gap-6 mt-16">
         {pets.map((pet) => (
           <Pet
             animal={pet.animal}
@@ -91,6 +92,10 @@ const SearchParams = () => {
             image={pet.images.at(0)}
           />
         ))}
+      </div> */}
+      <br />
+      <div className="">
+        <Results pets={pets} />
       </div>
     </div>
   );
