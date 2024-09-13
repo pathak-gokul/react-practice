@@ -11,7 +11,7 @@ const App = () => {
         <h1>Adpot Me!</h1>
 
         <Routes>
-          <Route path="/deatils/:id" element={<Details />} />
+          <Route path="details/:id" element={<Details />} />
           <Route path="/" element={<SearchParams />} />
         </Routes>
       </div>

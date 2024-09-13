@@ -3,7 +3,7 @@ const Pet = ({ city, animal, name, image, id }) => {
   return (
     <div className="flex overflow-hidden rounded-md border border-slate-50 shadow-md hover:translate-y-[3px] transition duration-300">
       <div className="shadow-md w-20 h-20">
-        <Link to={`/details/${id}`}>
+        <Link to={`details/${id}`}>
           <img src={image} className="w-full h-full block" alt={name} />
         </Link>
       </div>
