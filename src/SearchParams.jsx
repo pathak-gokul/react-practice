@@ -25,7 +25,7 @@ const SearchParams = () => {
   }
   console.log(pets.at(0));
   return (
-    <div className="search-params">
+    <div className="search-params bg-white">
       <form
         className="shadow-md rounded-md p-8 px-16 grid grid-cols-3 gap-4"
         onSubmit={(e) => {
@@ -78,7 +78,7 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <button className="w-full bg-indigo-400 text-white px-6 py-1 rounded-md">
+        <button className="w-full bg-indigo-600 text-white px-6 py-1 rounded-md">
           Submit
         </button>
       </form>

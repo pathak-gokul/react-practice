@@ -1,15 +1,25 @@
 import { createRoot } from "react-dom/client";
 import React from "react";
 import SearchParams from "./SearchParams";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./Details";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="max-w-5xl mx-auto p-16">
-        <h1>Adpot Me!</h1>
-
+      <header className="max-w-5xl mx-auto py-8 border-b border-b-gray-900/10 mb-16">
+        <Link to="/" className="text-center">
+          <div className="flex items-center">
+            <img
+              className="h-10 w-10"
+              src="https://pathakgokul.com.np/Gokul/assets/img/favicon.png"
+              alt="g"
+            />
+            <h1 className="text-blue-800">-Technology</h1>
+          </div>
+        </Link>
+      </header>
+      <div className="max-w-5xl mx-auto ">
         <Routes>
           <Route path="details/:id" element={<Details />} />
           <Route path="/" element={<SearchParams />} />
