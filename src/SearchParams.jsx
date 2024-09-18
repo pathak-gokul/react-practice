@@ -1,44 +1,44 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import Pet from "./Pet";
+import { useQuery } from "@tanstack/react-query";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
+import fetchSearch from "./fetchSearch";
+import CardLoader from "./components/ui/loader/CardLoader";
 const Animals = ["elephant", "cat", "dog", "rat", "rabbit", "bird", "reptile"];
 
 const SearchParams = () => {
-  const [location, setLocation] = useState("");
+  const [requestParams, setRequestParams] = useState({
+    location: "",
+    animal: "",
+    breed: "",
+  });
+  console.log(requestParams);
   const [animal, setAnimal] = useState("");
-  const [breed, setBreed] = useState("");
-  const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
 
-  useEffect(() => {
-    requestPets();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  async function requestPets() {
-    const res = await fetch(
-      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`,
-    );
-    const json = await res.json();
-    setPets(json.pets);
-  }
-  console.log(pets.at(0));
+  const results = useQuery(["search", requestParams], fetchSearch);
+  const pets = results?.data?.pets ?? [];
   return (
     <div className="search-params bg-white">
       <form
         className="grid grid-cols-1 md:grid-cols-3 gap-4"
         onSubmit={(e) => {
           e.preventDefault();
-          requestPets();
+          const formData = new FormData(e.target);
+          const obj = {
+            animal: formData.get("animal") ?? "",
+            breed: formData.get("breed") ?? "",
+            location: formData.get("location") ?? "",
+          };
+          setRequestParams(obj);
         }}
       >
         <label htmlFor="location" className="block">
           Location
           <input
-            onChange={(e) => setLocation(e.target.value)}
+            name="location"
             id="location"
-            value={location}
             placeholder="Location"
             className="w-full border border-slate-400 px-3 py-1 rounded-sm focus:outline-none focus:ring-indigo-500 focus:ring-1"
           />
@@ -51,7 +51,6 @@ const SearchParams = () => {
             className="w-full border border-slate-400 px-3 py-1 rounded-sm"
             onChange={(e) => {
               setAnimal(e.target.value);
-              setBreed("");
             }}
           >
             <option />
@@ -66,11 +65,8 @@ const SearchParams = () => {
           <select
             id="breed"
             disabled={breeds.length === 0}
-            value={breed}
+            name="breed"
             className="w-full border border-slate-400 px-3 py-1 rounded-sm"
-            onChange={(e) => {
-              setBreed(e.target.value);
-            }}
           >
             <option />
             {breeds.map((breed) => (
@@ -95,7 +91,7 @@ const SearchParams = () => {
       </div> */}
       <br />
       <div className="">
-        <Results pets={pets} />
+        {results.isLoading ? <CardLoader /> : <Results pets={pets} />}
       </div>
     </div>
   );
