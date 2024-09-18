@@ -27,7 +27,7 @@ const SearchParams = () => {
   return (
     <div className="search-params bg-white">
       <form
-        className="shadow-md rounded-md p-8 px-16 grid grid-cols-3 gap-4"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4"
         onSubmit={(e) => {
           e.preventDefault();
           requestPets();
@@ -40,7 +40,7 @@ const SearchParams = () => {
             id="location"
             value={location}
             placeholder="Location"
-            className="w-full border border-slate-400 px-3 py-1 rounded-sm"
+            className="w-full border border-slate-400 px-3 py-1 rounded-sm focus:outline-none focus:ring-indigo-500 focus:ring-1"
           />
         </label>
         <label htmlFor="animal" className="block">

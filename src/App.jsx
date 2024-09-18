@@ -4,6 +4,7 @@ import SearchParams from "./SearchParams";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./Details";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "./index.css";
 
 const queryclient = new QueryClient({
   defaultOptions: {
@@ -30,7 +31,7 @@ const App = () => {
             </div>
           </Link>
         </header>
-        <div className="max-w-5xl mx-auto ">
+        <div className="max-w-5xl mx-auto w-[90%]">
           <Routes>
             <Route path="details/:id" element={<Details />} />
             <Route path="/" element={<SearchParams />} />
