@@ -4,6 +4,8 @@ import fetchPet from "./fetchPet";
 import Carousel from "./Carousel";
 import { Icon } from "@iconify/react";
 import CardLoader from "./components/ui/loader/CardLoader";
+import ErrorBoundary from "./ErrorBoundary";
+
 const Details = () => {
   const { id } = useParams();
   // console.log("hi");
@@ -65,4 +67,11 @@ const Details = () => {
   );
 };
 
-export default Details;
+function DetailsErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} />
+    </ErrorBoundary>
+  );
+}
+export default DetailsErrorBoundary;
