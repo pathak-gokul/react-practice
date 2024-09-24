@@ -1,12 +1,18 @@
-const CardLoader = () => {
+const CardLoader = ({ c }) => {
   return (
     <div className="grid grid-cols-3 gap-4">
-      <LoderItem />
-      <LoderItem />
-      <LoderItem />
-      <LoderItem />
-      <LoderItem />
-      <LoderItem />
+      {c ? (
+        <LoderItem />
+      ) : (
+        <>
+          <LoderItem />
+          <LoderItem />
+          <LoderItem />
+          <LoderItem />
+          <LoderItem />
+          <LoderItem />
+        </>
+      )}
     </div>
   );
 };

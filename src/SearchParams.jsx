@@ -5,6 +5,7 @@ import useBreedList from "./useBreedList";
 import Results from "./Results";
 import fetchSearch from "./fetchSearch";
 import CardLoader from "./components/ui/loader/CardLoader";
+import { Icon } from "@iconify/react";
 const Animals = ["elephant", "cat", "dog", "rat", "rabbit", "bird", "reptile"];
 
 const SearchParams = () => {
@@ -74,7 +75,8 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <button className="w-full bg-indigo-600 text-white px-6 py-1 rounded-md">
+        <button className="w-full bg-indigo-600 text-white px-6 py-1 rounded-md flex gap-2 items-center justify-center">
+          <Icon icon="ic:round-send" fontSize={22} />
           Submit
         </button>
       </form>
