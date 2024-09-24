@@ -5,6 +5,7 @@ import Carousel from "./Carousel";
 import { Icon } from "@iconify/react";
 import CardLoader from "./components/ui/loader/CardLoader";
 import ErrorBoundary from "./ErrorBoundary";
+import AdpotMeDialog from "./AdpotMeDialog";
 
 const Details = () => {
   const { id } = useParams();
@@ -51,10 +52,14 @@ const Details = () => {
               </div>
             </div>
             <div>
-              <button className="bg-indigo-600 rounded-xl p-2 text-white mt-2 hover:bg-indigo-800 flex gap-2 items-center">
+              {/* <button
+                className="bg-indigo-600 rounded-xl p-2 text-white mt-2 hover:bg-indigo-800 flex gap-2 items-center"
+                onClick={() => setShowModal(true)}
+              >
                 <Icon icon="gg:add" fontSize={22} />
                 Adpot Me
-              </button>
+              </button> */}
+              <AdpotMeDialog name={pet.name} />
             </div>
           </div>
           <hr className="my-6 md:my-8 border-gray-200" />

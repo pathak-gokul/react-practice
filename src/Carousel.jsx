@@ -24,7 +24,7 @@ class Carousel extends Component {
           <img
             src={images[active]}
             alt="animal"
-            className="h-full w-full object-fill hover:scale-110 transition-all duration-300"
+            className="h-full w-full object-fit hover:scale-110 transition-all duration-300"
           />
         </div>
         <div className="mt-4 grid grid-cols-4 gap-y-4">
