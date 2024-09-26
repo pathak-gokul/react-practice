@@ -9,8 +9,14 @@ import {
   DialogFooter,
 } from "./components/ui/Dialog";
 import { Icon } from "@iconify/react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import AdoptedPetContext from "./AdoptedPetContext";
 
-const AdpotMeDialog = ({ name }) => {
+const AdpotMeDialog = ({ name, pet }) => {
+  const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
+  const [_, setAdpotedPet] = useContext(AdoptedPetContext);
   return (
     <Dialog>
       <DialogTrigger>
@@ -33,6 +39,8 @@ const AdpotMeDialog = ({ name }) => {
           <button
             onClick={() => {
               alert("You have successfully adopted", name);
+              setAdpotedPet(pet);
+              navigate("/");
             }}
             className="w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
           >

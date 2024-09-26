@@ -59,7 +59,7 @@ const Details = () => {
                 <Icon icon="gg:add" fontSize={22} />
                 Adpot Me
               </button> */}
-              <AdpotMeDialog name={pet.name} />
+              <AdpotMeDialog name={pet.name} pet={pet} />
             </div>
           </div>
           <hr className="my-6 md:my-8 border-gray-200" />
