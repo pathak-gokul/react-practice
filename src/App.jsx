@@ -7,6 +7,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./index.css";
 import { useState } from "react";
 import AdoptedPetContext from "./AdoptedPetContext";
+import LoginPage from "./LoginPage";
+import LoginPage2 from "./LoginPage2";
+import AskWithAI from "./AskWithAI";
 
 const queryclient = new QueryClient({
   defaultOptions: {
@@ -23,7 +26,7 @@ const App = () => {
     <BrowserRouter>
       <QueryClientProvider client={queryclient}>
         <AdoptedPetContext.Provider value={adoptedPet}>
-          <header className="max-w-5xl mx-auto py-8 border-b border-b-gray-900/10 mb-16">
+          {/* <header className="max-w-5xl mx-auto py-8 border-b border-b-gray-900/10 mb-16">
             <Link to="/" className="text-center">
               <div className="flex items-center">
                 <img
@@ -34,11 +37,14 @@ const App = () => {
                 <h1 className="text-blue-800">-Technology</h1>
               </div>
             </Link>
-          </header>
-          <div className="max-w-5xl mx-auto w-[90%]">
+          </header> */}
+          <div className="">
             <Routes>
               <Route path="details/:id" element={<Details />} />
               <Route path="/" element={<SearchParams />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/login2" element={<LoginPage2 />} />
+              <Route path="/ask" element={<AskWithAI />} />
             </Routes>
           </div>
         </AdoptedPetContext.Provider>
