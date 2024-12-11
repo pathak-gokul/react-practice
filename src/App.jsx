@@ -1,12 +1,9 @@
 import { createRoot } from "react-dom/client";
 import React from "react";
-import SearchParams from "./SearchParams";
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
-import Details from "./Details";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./index.css";
 import { useState } from "react";
-import AdoptedPetContext from "./AdoptedPetContext";
 import LoginPage from "./LoginPage";
 import LoginPage2 from "./LoginPage2";
 import AskWithAI from "./AskWithAI";
@@ -21,12 +18,10 @@ const queryclient = new QueryClient({
 });
 
 const App = () => {
-  const adoptedPet = useState(null);
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryclient}>
-        <AdoptedPetContext.Provider value={adoptedPet}>
-          {/* <header className="max-w-5xl mx-auto py-8 border-b border-b-gray-900/10 mb-16">
+        {/* <header className="max-w-5xl mx-auto py-8 border-b border-b-gray-900/10 mb-16">
             <Link to="/" className="text-center">
               <div className="flex items-center">
                 <img
@@ -38,16 +33,13 @@ const App = () => {
               </div>
             </Link>
           </header> */}
-          <div className="">
-            <Routes>
-              <Route path="details/:id" element={<Details />} />
-              <Route path="/" element={<SearchParams />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/login2" element={<LoginPage2 />} />
-              <Route path="/ask" element={<AskWithAI />} />
-            </Routes>
-          </div>
-        </AdoptedPetContext.Provider>
+        <div className="">
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login2" element={<LoginPage2 />} />
+            <Route path="/ask" element={<AskWithAI />} />
+          </Routes>
+        </div>
       </QueryClientProvider>
     </BrowserRouter>
   );
